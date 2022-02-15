@@ -1,0 +1,16 @@
+<h1>Wikinimous</h1>
+<%= link_to "New article",  new_article_path %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <% @articles.reverse.each do |article|%>
+        <article>
+          <h2><%= link_to article.title, article_path(article) %></a></h2>
+          <%= article[:content] %>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</div>
